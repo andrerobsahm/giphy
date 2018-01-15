@@ -1,0 +1,13 @@
+{
+  "name": "giphy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "query-string": "^5.0.1"
+  }
+}
