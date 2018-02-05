@@ -1,0 +1,17 @@
+// In this file you put all styles related to typography such as p, a, h1, etc.
+
+p {
+    font-family: $primary-font;
+    color: $accent-color;
+}
+
+a {
+    color: $primary-color;
+}
+
+footer{
+
+    p {
+        font-size: 0.8em;
+    }
+}
