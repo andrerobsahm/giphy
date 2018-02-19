@@ -1,21 +1,37 @@
 {
-  "name": "giphy",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "browser": "browser-sync start --server public --files public/**/*",
-    "build:styles": "node-sass --source-map true --output-style compressed src/styles/giphy.scss public/assets/styles/output.css",
-    "watch:styles": "node-sass src/styles/giphy.scss --watch public/assets/styles/output.css",
-    "watch": "npm-run-all --parallel browser watch:*"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "browser-sync": "^2.23.6",
-    "node-sass": "^4.7.2",
-    "npm-run-all": "^4.1.2",
-    "query-string": "^5.0.1",
-    "sanitize.css": "^5.0.0"
-  }
+    "private": true,
+    "name": "giphy",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "browser": "browser-sync start --server public --files public/**/*",
+        "build:styles": "node-sass src/styles/giphy.scss | cleancss --output public/assets/styles/output.css",
+        "build:scripts": "rollup --config --environment NODE_ENV:production",
+        "build": "npm-run-all --parallel build:*",
+        "watch:styles": "node-sass --source-map true --watch src/styles/giphy.scss public/assets/styles/output.css",
+        "watch:scripts": "rollup --config --watch",
+        "watch": "npm-run-all --parallel browser watch:*",
+        "test": "semistandard --verbose | snazzy"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "babel-core": "^6.26.0",
+        "babel-plugin-external-helpers": "^6.22.0",
+        "babel-preset-env": "^1.6.1",
+        "browser-sync": "^2.23.6",
+        "clean-css-cli": "^4.1.10",
+        "node-sass": "^4.7.2",
+        "npm-run-all": "^4.1.2",
+        "query-string": "^5.0.1",
+        "rollup": "^0.55.3",
+        "rollup-plugin-babel": "^3.0.3",
+        "rollup-plugin-commonjs": "^8.3.0",
+        "rollup-plugin-node-resolve": "^3.0.2",
+        "rollup-plugin-uglify": "^3.0.0",
+        "sanitize.css": "^5.0.0",
+        "semistandard": "^12.0.0",
+        "snazzy": "^7.0.0"
+    }
 }
